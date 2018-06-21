@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6a734860-5459-4f8c-9113-13fb62eb9634" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../CucumberTest/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CucumberTest/CucumberTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CucumberTest/src/test/java/LoginStepDef.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CucumberTest/src/test/java/feature/login.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CucumberTest/target/test-classes/LoginStepDef.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/HibernateExample.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/journaldev/hibernate/main/HibernateAnnotationMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/journaldev/hibernate/main/HibernateJavaConfigMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/journaldev/hibernate/main/HibernateMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/journaldev/hibernate/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/journaldev/hibernate/model/Employee1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/journaldev/hibernate/util/HibernateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/src/main/resources/employee.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/src/main/resources/hibernate-annotation.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/HibernateExample.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/classes/com/journaldev/hibernate/main/HibernateAnnotationMain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/classes/com/journaldev/hibernate/main/HibernateJavaConfigMain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/classes/com/journaldev/hibernate/main/HibernateMain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/classes/com/journaldev/hibernate/model/Employee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/classes/com/journaldev/hibernate/model/Employee1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/classes/com/journaldev/hibernate/util/HibernateUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/classes/employee.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/classes/hibernate-annotation.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HibernateExample/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PRO-Kabaddi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/courseapi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/derby.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/cucumbertest/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/cucumbertest/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/cucumbertest/java9.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/A.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/Account.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/AdditionArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/B.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/EagerInitialization.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/Employee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/Hashmap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/LinkedList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/Main$EmpComparator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/Main$Employee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/out/production/practice/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/src/main/java/com/vikrant/courseComponent/CourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/src/main/java/com/vikrant/courseComponent/CourseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/src/main/java/com/vikrant/courseComponent/CourseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/src/main/java/com/vikrant/entity/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/src/main/java/com/vikrant/springbootstarter/CourseAPIApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/target/course-api-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/target/course-api-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseapi/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cucumber.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cucumbertest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/All Jar1.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/All Jar2.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/src/main/java/com/greengardens/GardenersServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/src/main/java/com/greengardens/gardeners/domain/Gardener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/src/main/java/com/greengardens/gardeners/repository/GardenerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/src/main/java/com/greengardens/gardeners/rest/GardenerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/src/main/java/com/greengardens/gardeners/service/GardenerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/src/main/resources/gardeners/joe_smith.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/src/test/java/com/greengardens/gardeners/domain/AListOfGardeners.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/target/classes/com/greengardens/GardenersServiceApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/target/classes/com/greengardens/gardeners/domain/Gardener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/target/classes/com/greengardens/gardeners/repository/GardenerRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/target/classes/com/greengardens/gardeners/rest/GardenerController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/target/classes/com/greengardens/gardeners/service/GardenerService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/target/classes/gardeners/joe_smith.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../green-gardeners-develop/target/test-classes/com/greengardens/gardeners/domain/AListOfGardeners.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/hibernate.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/src/main/java/com/vikrant/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/src/main/java/com/vikrant/HibernateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/target/classes/com/vikrant/Employee$EmployeeBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/target/classes/com/vikrant/Employee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/target/classes/com/vikrant/HibernateUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/target/hibernate-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/target/hibernate-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java9/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java9/java9.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java9/out/production/practice/Break.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java9/out/production/practice/GetRequestJson$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java9/out/production/practice/GetRequestJson$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java9/out/production/practice/GetRequestJson.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java9/out/production/practice/HashcodeString.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java9/out/production/practice/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java9/untitled/src/GetRequestJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java9/untitled/src/HashcodeString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java9/untitled/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/src/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/src/AdditionArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/src/EagerInitialization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/src/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/src/Hashmap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/src/LinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/src/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../retailstore" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OnlineRetailStoreApplication.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikrant/mediaocean/OnlineRetailStoreApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#264#265#0" expanded="true" />
+                <element signature="e#302#303#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/onlineretailstore.iml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vikrant/mediaocean/OnlineRetailStoreApplication.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Cloning issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="onlineretailstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onlineretailstore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="onlineretailstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onlineretailstore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="onlineretailstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onlineretailstore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="onlineretailstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onlineretailstore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="onlineretailstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onlineretailstore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="OnlineRetailStoreApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vikrant.mediaocean.OnlineRetailStoreApplication" />
+      <module name="onlineretailstore" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vikrant.mediaocean.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.OnlineRetailStoreApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\New Pc\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a734860-5459-4f8c-9113-13fb62eb9634" name="Default" comment="" />
+      <created>1529591032214</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1529591032214</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" weight="0.32843137" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32843137" />
+      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32843137" />
+      <window_info id="Designer" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="UI Designer" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/onlineretailstore.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="41" lean-forward="true" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikrant/mediaocean/OnlineRetailStoreApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#264#265#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
