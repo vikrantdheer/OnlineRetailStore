@@ -1,6 +1,5 @@
 package com.vikrant.mediaocean.entity;
 
-import com.google.common.base.Objects;
 import com.vikrant.mediaocean.utils.ProductCategory;
 
 import javax.persistence.*;
@@ -11,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long productId;
 
     @NotNull
@@ -28,11 +27,41 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long productId, String productName, ProductCategory productCategory, double rate) {
+    public Product(@NotNull Long productId, @NotNull String productName, @NotNull ProductCategory productCategory, @NotNull double rate) {
+
         this.productId = productId;
         this.productName = productName;
         this.productCategory = productCategory;
         this.rate = rate;
+    }
+
+    public static ProductBuilder withId(Long productId) {
+        return new ProductBuilder(productId);
+    }
+
+    public static class ProductBuilder {
+        private Long productId;
+        private String productName;
+        private ProductCategory productCategory;
+        private double rate;
+
+        private ProductBuilder(Long productId) {
+            this.productId = productId;
+        }
+
+        public ProductBuilder havingName(String productName) {
+            this.productName = productName;
+            return this;
+        }
+
+        public ProductBuilder ofCategory(ProductCategory productCategory) {
+            this.productCategory = productCategory;
+            return this;
+        }
+
+        public Product costing(double rate) {
+            return new Product(productId, productName, productCategory, rate);
+        }
     }
 
     public Long getProductId() {
@@ -65,31 +94,5 @@ public class Product {
 
     public void setRate(double rate) {
         this.rate = rate;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return Double.compare(product.rate, rate) == 0 &&
-                Objects.equal(productId, product.productId) &&
-                Objects.equal(productName, product.productName) &&
-                productCategory == product.productCategory;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(productId, productName, productCategory, rate);
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productId=" + productId +
-                ", productName='" + productName + '\'' +
-                ", productCategory=" + productCategory +
-                ", rate=" + rate +
-                '}';
     }
 }
