@@ -4,9 +4,9 @@ This project consists of RESTful services that implement a checkout counter for 
 The bill should also total the cost of all the products and the applicable sales tax for each product.
 The total cost and total sales tax should be printed
 Sales tax varies based on the type of products
-# category A products carry a levy of 10%
-# category B products carry a levy of 20%
-# category C products carry no levy
+-> category A products carry a levy of 10%
+-> category B products carry a levy of 20%
+-> category C products carry no levy
 
 # REST endpoints
 We can add/update/modify products and bills using the below REST endpoints:
