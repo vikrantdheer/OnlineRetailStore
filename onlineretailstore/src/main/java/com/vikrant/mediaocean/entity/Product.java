@@ -15,7 +15,6 @@ public class Product {
     private Long productId;
 
     @NotNull
-    @Column
     private String productName;
 
     @NotNull
