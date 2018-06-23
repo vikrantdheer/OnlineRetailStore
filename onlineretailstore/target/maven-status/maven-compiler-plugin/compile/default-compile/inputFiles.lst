@@ -3,8 +3,10 @@ G:\Vikrant\workspace\onlineretailstore\src\main\java\com\vikrant\mediaocean\cont
 G:\Vikrant\workspace\onlineretailstore\src\main\java\com\vikrant\mediaocean\controller\BillController.java
 G:\Vikrant\workspace\onlineretailstore\src\main\java\com\vikrant\mediaocean\service\BillsService.java
 G:\Vikrant\workspace\onlineretailstore\src\main\java\com\vikrant\mediaocean\repository\ProductRepository.java
+G:\Vikrant\workspace\onlineretailstore\src\main\java\com\vikrant\mediaocean\exception\ProductAlreadyExistsException.java
 G:\Vikrant\workspace\onlineretailstore\src\main\java\com\vikrant\mediaocean\entity\Product.java
 G:\Vikrant\workspace\onlineretailstore\src\main\java\com\vikrant\mediaocean\OnlineRetailStoreApplication.java
 G:\Vikrant\workspace\onlineretailstore\src\main\java\com\vikrant\mediaocean\utils\ProductCategory.java
+G:\Vikrant\workspace\onlineretailstore\src\main\java\com\vikrant\mediaocean\beans\ProductBean.java
 G:\Vikrant\workspace\onlineretailstore\src\main\java\com\vikrant\mediaocean\entity\Bill.java
 G:\Vikrant\workspace\onlineretailstore\src\main\java\com\vikrant\mediaocean\service\ProductService.java

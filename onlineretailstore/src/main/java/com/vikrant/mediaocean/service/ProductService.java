@@ -2,7 +2,7 @@ package com.vikrant.mediaocean.service;
 
 import com.vikrant.mediaocean.beans.ProductBean;
 import com.vikrant.mediaocean.entity.Product;
-import com.vikrant.mediaocean.exception.ProductAlreadyExistsException;
+import com.vikrant.mediaocean.exception.*;
 import com.vikrant.mediaocean.repository.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+
+import static com.vikrant.mediaocean.utils.ProductCategory.*;
+
 
 @Service
 public class ProductService {
@@ -29,6 +32,8 @@ public class ProductService {
 
     public Product addProduct(ProductBean productDetails) {
         logger.info("JSON received to create product = " + productDetails);
+
+        validateJson(productDetails);
         checkWhetherProductExists(productDetails.getProductId());
 
         Product product = Product.withId(productDetails.getProductId())
@@ -41,12 +46,24 @@ public class ProductService {
         return product;
     }
 
+    private void validateJson(ProductBean productDetails) {
+        if (0.0 >= productDetails.getRate()) {
+            throw new InvalidProductPriceException("Product price cannot be less than 0.1");
+        } else if (null == productDetails.getProductId()) {
+            throw new InvalidProductIDException("Product ID cannot be blank");
+        } else if (productDetails.getProductCategory().toString().equals(A) || productDetails.getProductCategory().toString().equals(B) || productDetails.getProductCategory().toString().equals(C)) {
+            throw new InvalidProductCategoryException("Product Category should be A, B or C");
+        } else if (productDetails.getProductName().isEmpty() && productDetails.getProductName() == null) {
+            throw new InvalidProductNameException("Product should have some name");
+        }
+    }
+
     private void checkWhetherProductExists(Long newProductId) {
         Optional<Product> product = productRepository.findById(newProductId);
         if (product.isPresent()) {
             logger.info("Product with id: " + newProductId + " already exists");
             throw new ProductAlreadyExistsException("Product with id: " + newProductId + " already exists");
-        }else{
+        } else {
             logger.info("Proceeding with insertion of new product with id: " + newProductId);
         }
     }

@@ -1,10 +1,14 @@
 com\vikrant\mediaocean\OnlineRetailStoreApplication.class
 com\vikrant\mediaocean\controller\BillController.class
 com\vikrant\mediaocean\entity\Bill.class
-com\vikrant\mediaocean\config\SwaggerConfig.class
 com\vikrant\mediaocean\entity\Product.class
+com\vikrant\mediaocean\entity\Product$ProductBuilder.class
+com\vikrant\mediaocean\entity\Product$1.class
 com\vikrant\mediaocean\utils\ProductCategory.class
-com\vikrant\mediaocean\service\ProductService.class
 com\vikrant\mediaocean\controller\ProductController.class
+com\vikrant\mediaocean\exception\ProductAlreadyExistsException.class
+com\vikrant\mediaocean\config\SwaggerConfig.class
+com\vikrant\mediaocean\beans\ProductBean.class
+com\vikrant\mediaocean\service\ProductService.class
 com\vikrant\mediaocean\service\BillsService.class
 com\vikrant\mediaocean\repository\ProductRepository.class

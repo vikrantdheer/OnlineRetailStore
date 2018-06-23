@@ -48,7 +48,9 @@ public class ProductController {
     @ApiOperation(value = "Add new product")
     @RequestMapping(value = "/products", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<Product> addProduct(@ApiParam(value = "JSON for the new product", required = true) @Valid @RequestBody ProductBean productDetails) {
+
         Product product = productService.addProduct(productDetails);
+
         HttpHeaders responseHeaders = new HttpHeaders();
         URI newPollUri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(product.getProductId())
                 .toUri();
@@ -56,5 +58,7 @@ public class ProductController {
         responseHeaders.setLocation(newPollUri);
         return new ResponseEntity<>(product, responseHeaders, HttpStatus.CREATED);
     }
+
+
 
 }

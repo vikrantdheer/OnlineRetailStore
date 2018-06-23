@@ -3,6 +3,7 @@ package com.vikrant.mediaocean.entity;
 import com.vikrant.mediaocean.utils.ProductCategory;
 
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -10,7 +11,7 @@ import javax.validation.constraints.NotNull;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long productId;
 
     @NotNull
@@ -22,13 +23,13 @@ public class Product {
     private ProductCategory productCategory;
 
     @NotNull
+    @DecimalMin(value = "0.1")
     private double rate;
 
     public Product() {
     }
 
     public Product(@NotNull Long productId, @NotNull String productName, @NotNull ProductCategory productCategory, @NotNull double rate) {
-
         this.productId = productId;
         this.productName = productName;
         this.productCategory = productCategory;
