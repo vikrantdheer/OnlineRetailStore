@@ -46,6 +46,28 @@ public class ProductService {
         return product;
     }
 
+    public void deleteProductById(Long productId) {
+        verifyProductExistsBy(productId);
+        productRepository.deleteById(productId);
+    }
+
+    public Product updateProductWith(ProductBean newDetails, Long productId) {
+        Product product;
+
+        verifyProductExistsBy(productId);
+
+        Optional<Product> productFound = productRepository.findById(newDetails.getProductId());
+        product = productFound.get().withId(newDetails.getProductId())
+                .havingName(newDetails.getProductName())
+                .ofCategory(newDetails.getProductCategory())
+                .costing(newDetails.getRate());
+
+        logger.info("Updated product id = " + newDetails.getProductId());
+
+        return productRepository.save(product);
+
+    }
+
     private void validateJson(ProductBean productDetails) {
         if (0.0 >= productDetails.getRate()) {
             throw new InvalidProductPriceException("Product price cannot be less than 0.1");
@@ -67,4 +89,14 @@ public class ProductService {
             logger.info("Proceeding with insertion of new product with id: " + newProductId);
         }
     }
+
+    private void verifyProductExistsBy(Long id) {
+        logger.info("Verifying if the product exists with an id = " + id);
+        Optional<Product> product = productRepository.findById(id);
+        if (!product.isPresent()) {
+            throw new ProductNotFoundException("Product with id " + id + " not found");
+        }
+    }
+
+
 }

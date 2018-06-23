@@ -27,6 +27,7 @@ public class Product {
     private double rate;
 
     public Product() {
+        super();
     }
 
     public Product(@NotNull Long productId, @NotNull String productName, @NotNull ProductCategory productCategory, @NotNull double rate) {

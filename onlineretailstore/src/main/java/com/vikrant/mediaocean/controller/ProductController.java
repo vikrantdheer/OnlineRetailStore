@@ -28,7 +28,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home() {
         return "Online retail store application is up";
     }
@@ -36,12 +36,14 @@ public class ProductController {
     @ApiOperation(value = "View all products")
     @RequestMapping(value = "/products", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Iterable<Product>> getAllProducts() {
+
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
     }
 
     @ApiOperation(value = "View product by id")
     @RequestMapping(value = "/products/{id}", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Optional<Product>> getProductByID(@PathVariable(value = "id") Long id) {
+
         return new ResponseEntity<Optional<Product>>(productService.getProductByID(id), HttpStatus.OK);
     }
 
@@ -56,9 +58,29 @@ public class ProductController {
                 .toUri();
         logger.info("Setting header url with newly created product= " + product.getProductId());
         responseHeaders.setLocation(newPollUri);
+
         return new ResponseEntity<>(product, responseHeaders, HttpStatus.CREATED);
     }
 
+    @ApiOperation(value = "Delete existing Product")
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<String> deleteProduct(@PathVariable(value = "id") Long productId) {
+
+        productService.deleteProductById(productId);
+
+        return new ResponseEntity<>("{status: success}", HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Updates the product details")
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT, produces = "application/json")
+    public ResponseEntity<Product> updateProduct(@ApiParam(value = "Details for updating the prouct", required = true)
+                                                 @Valid @RequestBody ProductBean newDetails, @PathVariable Long id) {
+
+        Product updatedProduct = productService.updateProductWith(newDetails, id);
+
+        logger.info("Updated product with id: " + id);
+        return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
+    }
 
 
 }
