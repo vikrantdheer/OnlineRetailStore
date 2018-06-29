@@ -12,7 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
@@ -42,14 +46,14 @@ public class ProductController {
 
     @ApiOperation(value = "View product by id")
     @RequestMapping(value = "/products/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Optional<Product>> getProductByID(@PathVariable(value = "id") Long id) {
+    public ResponseEntity<Optional<Product>> getProductByID(@PathVariable(value = "id") Integer id) {
 
         return new ResponseEntity<Optional<Product>>(productService.getProductByID(id), HttpStatus.OK);
     }
 
     @ApiOperation(value = "Add new product")
     @RequestMapping(value = "/products", method = RequestMethod.POST, produces = "application/json")
-    public ResponseEntity<Product> addProduct(@ApiParam(value = "JSON for the new product", required = true) @Valid @RequestBody ProductBean productDetails) {
+    public ResponseEntity<Product> addProduct(@ApiParam(value = "JSON for the new product", required = true) @Valid @RequestBody Product productDetails) {
 
         Product product = productService.addProduct(productDetails);
 
@@ -64,7 +68,7 @@ public class ProductController {
 
     @ApiOperation(value = "Delete existing Product")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<String> deleteProduct(@PathVariable(value = "id") Long productId) {
+    public ResponseEntity<String> deleteProduct(@PathVariable(value = "id") Integer productId) {
 
         productService.deleteProductById(productId);
 
@@ -74,7 +78,7 @@ public class ProductController {
     @ApiOperation(value = "Updates the product details")
     @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT, produces = "application/json")
     public ResponseEntity<Product> updateProduct(@ApiParam(value = "Details for updating the prouct", required = true)
-                                                 @Valid @RequestBody ProductBean newDetails, @PathVariable Long id) {
+                                                 @Valid @RequestBody ProductBean newDetails, @PathVariable Integer id) {
 
         Product updatedProduct = productService.updateProductWith(newDetails, id);
 

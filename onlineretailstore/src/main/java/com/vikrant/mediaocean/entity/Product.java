@@ -12,7 +12,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long productId;
+    private Integer productId;
 
     @NotNull
     private String productName;
@@ -29,24 +29,24 @@ public class Product {
         super();
     }
 
-    public Product(@NotNull Long productId, @NotNull String productName, @NotNull ProductCategory productCategory, @NotNull double rate) {
+    public Product(@NotNull Integer productId, @NotNull String productName, @NotNull ProductCategory productCategory, @NotNull double rate) {
         this.productId = productId;
         this.productName = productName;
         this.productCategory = productCategory;
         this.rate = rate;
     }
 
-    public static ProductBuilder withId(Long productId) {
+    public static ProductBuilder withId(Integer productId) {
         return new ProductBuilder(productId);
     }
 
     public static class ProductBuilder {
-        private Long productId;
+        private Integer productId;
         private String productName;
         private ProductCategory productCategory;
         private double rate;
 
-        private ProductBuilder(Long productId) {
+        private ProductBuilder(Integer productId) {
             this.productId = productId;
         }
 
@@ -65,11 +65,11 @@ public class Product {
         }
     }
 
-    public Long getProductId() {
+    public Integer getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(Integer productId) {
         this.productId = productId;
     }
 

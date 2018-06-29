@@ -1,14 +1,12 @@
 package com.vikrant.mediaocean.beans;
 
 import com.google.common.base.Objects;
+import com.sun.istack.internal.NotNull;
 import com.vikrant.mediaocean.utils.ProductCategory;
 
-import javax.validation.constraints.NotNull;
-
 public class ProductBean {
-
     @NotNull
-    private Long productId;
+    private Integer productId;
 
     @NotNull
     private String productName;
@@ -22,18 +20,18 @@ public class ProductBean {
     public ProductBean() {
     }
 
-    public ProductBean(@NotNull Long productId, @NotNull String productName, @NotNull ProductCategory productCategory, @NotNull double rate) {
+    public ProductBean(@NotNull Integer productId, @NotNull String productName, @NotNull ProductCategory productCategory, @NotNull double rate) {
         this.productId = productId;
         this.productName = productName;
         this.productCategory = productCategory;
         this.rate = rate;
     }
 
-    public Long getProductId() {
+    public Integer getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(Integer productId) {
         this.productId = productId;
     }
 
@@ -79,7 +77,7 @@ public class ProductBean {
 
     @Override
     public String toString() {
-        return "ProductBean{" +
+        return "Product{" +
                 "productId=" + productId +
                 ", productName='" + productName + '\'' +
                 ", productCategory=" + productCategory +
@@ -87,3 +85,4 @@ public class ProductBean {
                 '}';
     }
 }
+

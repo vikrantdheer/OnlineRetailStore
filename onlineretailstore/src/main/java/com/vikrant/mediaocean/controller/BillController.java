@@ -12,11 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,13 +31,13 @@ public class BillController {
     @Autowired
     private BillService billService;
 
-    private List<Product> productList;
+    private List<Product> productList = new ArrayList<>();
 
     private final Logger logger = LoggerFactory.getLogger(BillController.class);
 
     @ApiOperation(value = "Fetches a particular bill details")
     @RequestMapping(value = "/bills/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Optional<Bill>> getBillById(@PathVariable Long id) {
+    public ResponseEntity<Optional<Bill>> getBillById(@PathVariable Integer id) {
         return new ResponseEntity<Optional<Bill>>(billService.getBillById(id), HttpStatus.OK);
     }
 
@@ -45,7 +49,7 @@ public class BillController {
 
     @ApiOperation(value = "Deletes Bill")
     @RequestMapping(value = "/bills/{id}", produces = "application/json", method = RequestMethod.DELETE)
-    public ResponseEntity<String> deleteBill(@PathVariable Long billId) {
+    public ResponseEntity<String> deleteBill(@PathVariable Integer billId) {
         billService.deleteBillById(billId);
         return new ResponseEntity<>("{\"status\": \"success\"}", HttpStatus.OK);
     }
@@ -54,7 +58,7 @@ public class BillController {
     @RequestMapping(value = "/bills", produces = "application/json", method = RequestMethod.POST)
     public ResponseEntity<Bill> createBill() {
         logger.info("Request recieved to create Bill = ");
-        Bill bill = billService.createBill(new BillBean(1L , productList, 2));
+        Bill bill = billService.createBill(new Bill(0, 0, 0.0));
 
         logger.info("Created Bill with id = " + bill.getBillId());
         HttpHeaders responseHeaders = new HttpHeaders();
@@ -68,9 +72,9 @@ public class BillController {
 
     @ApiOperation(value = "Add or Remove products from the Bill")
     @RequestMapping(value = "/bills/{id}", produces = "application/json", method = RequestMethod.PUT)
-    public ResponseEntity<Bill> updateBill(@RequestBody BillBean billDetails, @PathVariable Long id) {
-        Bill updatedBill = billService.updateBill(billDetails, id);
-        logger.info("Request recieved =  " + billDetails);
-        return new ResponseEntity<>(updatedBill, HttpStatus.OK);
+    public ResponseEntity<Optional<Bill>> updateBill(@RequestBody BillBean billDetails, @PathVariable Integer id) {
+        logger.info("Request received to update the bill with id: %s  ", id);
+        Optional<Bill> updatedBill = billService.updateBill(billDetails, id);
+        return new ResponseEntity<Optional<Bill>>(updatedBill, HttpStatus.OK);
     }
 }

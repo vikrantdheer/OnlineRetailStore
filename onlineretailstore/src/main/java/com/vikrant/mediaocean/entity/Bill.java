@@ -2,7 +2,14 @@ package com.vikrant.mediaocean.entity;
 
 import com.google.common.base.Objects;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -12,7 +19,7 @@ public class Bill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long billId;
+    private Integer billId;
 
     @NotNull
     private int noOfItems;
@@ -27,44 +34,45 @@ public class Bill {
     private double totalValue;
 
     @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    private List<Product> products;
+    private List<Order> productOrder;
 
     public Bill() {
         super();
     }
 
-    public Bill(@NotNull Long billId, @NotNull int noOfItems) {
+    public Bill(@NotNull Integer billId, @NotNull int noOfItems, @NotNull double totalValue) {
         this.billId = billId;
         this.noOfItems = noOfItems;
+        this.totalValue = totalValue;
     }
 
-    public static BillBuilder withId(Long billId) {
+    public static BillBuilder withId(Integer billId) {
         return new BillBuilder(billId);
     }
 
     public static class BillBuilder {
-        private Long billId;
-        private List<Product> listOfProducts;
+        private Integer billId;
+        private Integer numberOfItems;
 
-        public BillBuilder(Long billId) {
+        public BillBuilder(Integer billId) {
             this.billId = billId;
         }
 
-        public BillBuilder havingProducts(List<Product> listOfProducts) {
-            this.listOfProducts = listOfProducts;
+        public BillBuilder withNumberOfItems(Integer numberOfItems) {
+            this.numberOfItems = numberOfItems;
             return this;
         }
 
-        public Bill withQuantity(Integer productQuantity) {
-            return new Bill(this.billId, productQuantity);
+        public Bill havingTotalValueOf(double totalValue) {
+            return new Bill(this.billId, numberOfItems, totalValue);
         }
     }
 
-    public Long getBillId() {
+    public Integer getBillId() {
         return billId;
     }
 
-    public void setBillId(Long billId) {
+    public void setBillId(Integer billId) {
         this.billId = billId;
     }
 
@@ -100,12 +108,12 @@ public class Bill {
         this.totalValue = totalValue;
     }
 
-    public List<Product> getListOfProducts() {
-        return products;
+    public List<Order> getProductOrder() {
+        return productOrder;
     }
 
-    public void setListOfProducts(List<Product> listOfProducts) {
-        this.products = listOfProducts;
+    public void setProductOrder(List<Order> productOrder) {
+        this.productOrder = productOrder;
     }
 
     @Override

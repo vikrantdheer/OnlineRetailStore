@@ -13,7 +13,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-import static com.vikrant.mediaocean.utils.ProductCategory.*;
+import static com.vikrant.mediaocean.utils.ProductCategory.A;
+import static com.vikrant.mediaocean.utils.ProductCategory.B;
+import static com.vikrant.mediaocean.utils.ProductCategory.C;
 
 @Service
 public class ProductService {
@@ -23,21 +25,21 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public Optional<Product> getProductByID(Long id) {
+    public Optional<com.vikrant.mediaocean.entity.Product> getProductByID(Integer id) {
         return productRepository.findById(id);
     }
 
-    public Iterable<Product> getAllProducts() {
+    public Iterable<com.vikrant.mediaocean.entity.Product> getAllProducts() {
         return productRepository.findAll();
     }
 
-    public Product addProduct(ProductBean productDetails) {
-        logger.info("JSON received to create product = " + productDetails);
+    public Product addProduct(Product productDetails) {
+        logger.info("Data received to create product = " + productDetails);
 
         validateJson(productDetails);
         checkWhetherProductExists(productDetails.getProductId());
 
-        Product product = Product.withId(productDetails.getProductId())
+        Product product = com.vikrant.mediaocean.entity.Product.withId(productDetails.getProductId())
                 .havingName(productDetails.getProductName())
                 .ofCategory(productDetails.getProductCategory())
                 .costing(productDetails.getRate());
@@ -47,17 +49,17 @@ public class ProductService {
         return product;
     }
 
-    public void deleteProductById(Long productId) {
+    public void deleteProductById(Integer productId) {
         verifyProductExistsBy(productId);
         productRepository.deleteById(productId);
     }
 
-    public Product updateProductWith(ProductBean newDetails, Long productId) {
-        Product product;
+    public Product updateProductWith(ProductBean newDetails, Integer productId) {
+        com.vikrant.mediaocean.entity.Product product;
 
         verifyProductExistsBy(productId);
 
-        Optional<Product> productFound = productRepository.findById(newDetails.getProductId());
+        Optional<com.vikrant.mediaocean.entity.Product> productFound = productRepository.findById(newDetails.getProductId());
         product = productFound.get().withId(newDetails.getProductId())
                 .havingName(newDetails.getProductName())
                 .ofCategory(newDetails.getProductCategory())
@@ -69,7 +71,7 @@ public class ProductService {
 
     }
 
-    private void validateJson(ProductBean productDetails) {
+    private void validateJson(Product productDetails) {
         if (0.0 >= productDetails.getRate()) {
             throw new InvalidProductException("Product price cannot be less than 0.1");
         } else if (null == productDetails.getProductId()) {
@@ -81,21 +83,19 @@ public class ProductService {
         }
     }
 
-    private void checkWhetherProductExists(Long newProductId) {
-        Optional<Product> product = productRepository.findById(newProductId);
-        if (product.isPresent()) {
+    private void checkWhetherProductExists(Integer newProductId) {
+        Optional<com.vikrant.mediaocean.entity.Product> product = productRepository.findById(newProductId);
+        if (product.isPresent())
             logger.info("Product with id: " + newProductId + " already exists");
-            throw new ProductAlreadyExistsException("Product with id: " + newProductId + " already exists");
-        } else {
-            logger.info("Proceeding with insertion of new product with id: " + newProductId);
-        }
+        throw new ProductAlreadyExistsException("Product with id: " + newProductId + " already exists");
     }
 
-    private void verifyProductExistsBy(Long id) {
+    public Optional<com.vikrant.mediaocean.entity.Product> verifyProductExistsBy(Integer id) {
         logger.info("Verifying if the product exists with an id = " + id);
-        Optional<Product> product = productRepository.findById(id);
+        Optional<com.vikrant.mediaocean.entity.Product> product = productRepository.findById(id);
         if (!product.isPresent()) {
             throw new ProductNotFoundException("Product with id " + id + " not found");
         }
+        return product;
     }
 }

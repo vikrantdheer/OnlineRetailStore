@@ -1,54 +1,29 @@
 package com.vikrant.mediaocean.beans;
 
 import com.google.common.base.Objects;
-import com.vikrant.mediaocean.entity.Product;
+import com.sun.istack.internal.NotNull;
 
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class BillBean {
 
     @NotNull
-    private Long billId;
-
-    @NotNull
-    private List<Product> products;
-
-    @NotNull
-    private Integer productQuantity;
+    private List<ProductDetailsForBilling> productsToBeAddedForBilling;
 
     public BillBean() {
         super();
     }
 
-    public BillBean(@NotNull Long billId, @NotNull List<Product> products, @NotNull Integer productQuantity) {
-        this.billId = billId;
-        this.products = products;
-        this.productQuantity = productQuantity;
+    public BillBean(@NotNull List<ProductDetailsForBilling> products) {
+        this.productsToBeAddedForBilling = products;
     }
 
-    public Long getBillId() {
-        return billId;
+    public List<ProductDetailsForBilling> getProducts() {
+        return productsToBeAddedForBilling;
     }
 
-    public void setBillId(Long billId) {
-        this.billId = billId;
-    }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
-    public Integer getProductQuantity() {
-        return productQuantity;
-    }
-
-    public void setProductQuantity(Integer productQuantity) {
-        this.productQuantity = productQuantity;
+    public void setProducts(List<ProductDetailsForBilling> products) {
+        this.productsToBeAddedForBilling = products;
     }
 
     @Override
@@ -56,22 +31,19 @@ public class BillBean {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BillBean billBean = (BillBean) o;
-        return Objects.equal(billId, billBean.billId) &&
-                Objects.equal(products, billBean.products) &&
-                Objects.equal(productQuantity, billBean.productQuantity);
+        return Objects.equal(productsToBeAddedForBilling, billBean.productsToBeAddedForBilling);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(billId, products, productQuantity);
+        return Objects.hashCode(productsToBeAddedForBilling);
     }
 
     @Override
     public String toString() {
-        return "BillBean{" +
-                "billId='" + billId + '\'' +
-                ", products=" + products +
-                ", productQuantity=" + productQuantity +
+        return "Bill{" +
+                ", products to be added:" + productsToBeAddedForBilling +
                 '}';
     }
 }
+
