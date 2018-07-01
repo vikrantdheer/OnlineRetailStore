@@ -37,3 +37,5 @@ We can add/update/modify products and bills using the below REST endpoints:
 
 The application is using H2 in-memory database and it persists test data on application restarts.
 
+**Update with spring security username and password both are "vikrant"
+
