@@ -14,7 +14,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -51,7 +50,6 @@ public class BillService {
         return bill;
     }
 
-    @Transactional
     public Bills createBill(Bills billDetails) {
         logger.info("JSON received to create bill = " + billDetails);
 
@@ -66,13 +64,11 @@ public class BillService {
         return newBill;
     }
 
-    @Transactional
     public void deleteBillById(Integer billId) {
         verifyBillExistsWith(billId);
         billRepository.deleteById(billId);
     }
 
-    @Transactional
     public Optional<Bills> updateBill(@NotNull BillBean billUpdateInfo, Integer billId) {
 
         verifyBillExistsWith(billId);

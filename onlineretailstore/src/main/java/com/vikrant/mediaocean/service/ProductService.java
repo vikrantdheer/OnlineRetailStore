@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -26,19 +25,22 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public Optional<Product> getProductByID(Integer id) {
-        return productRepository.findById(id);
+    public Product getProductByID(Integer id) {
+        Optional<Product> product = productRepository.findById(id);
+        if (!product.isPresent()) {
+            throw new ProductNotFoundException("Product with id " + id + " not found");
+        }
+        return product.get();
     }
 
     public Iterable<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
-    @Transactional
-    public Product addProduct(Product productDetails) {
+    public Product addProduct(ProductBean productDetails) {
         logger.info("Data received to create product: " + productDetails);
 
-        validateJson(productDetails);
+        validateProductDetails(productDetails);
         checkWhetherProductExists(productDetails.getProductId());
 
         Product product = Product.withId(productDetails.getProductId())
@@ -51,20 +53,18 @@ public class ProductService {
         return product;
     }
 
-    @Transactional
     public void deleteProductById(Integer productId) {
         verifyProductExistsBy(productId);
         productRepository.deleteById(productId);
     }
 
-    @Transactional
     public Product updateProductWith(ProductBean newDetails, Integer productId) {
         Product product;
 
         verifyProductExistsBy(productId);
 
-        Optional<Product> productFound = productRepository.findById(newDetails.getProductId());
-        product = productFound.get().withId(newDetails.getProductId())
+        Product productFound = productRepository.findById(newDetails.getProductId()).get();
+        product = productFound.withId(newDetails.getProductId())
                 .havingName(newDetails.getProductName())
                 .ofCategory(newDetails.getProductCategory())
                 .costing(newDetails.getRate());
@@ -75,14 +75,14 @@ public class ProductService {
 
     }
 
-    private void validateJson(Product productDetails) {
+    private void validateProductDetails(ProductBean productDetails) {
         if (0.0 >= productDetails.getRate()) {
             throw new InvalidProductException("Product price cannot be less than 0.1");
         } else if (null == productDetails.getProductId()) {
             throw new InvalidProductException("Product ID cannot be blank");
         } else if (productDetails.getProductCategory().toString().equals(A) || productDetails.getProductCategory().toString().equals(B) || productDetails.getProductCategory().toString().equals(C)) {
             throw new InvalidProductException("Product Category should be A, B or C");
-        } else if (productDetails.getProductName().isEmpty() && productDetails.getProductName() == null) {
+        } else if (productDetails.getProductName().isEmpty() || productDetails.getProductName() == null) {
             throw new InvalidProductException("Product should have some name");
         }
     }
@@ -96,7 +96,7 @@ public class ProductService {
     }
 
     public Product verifyProductExistsBy(Integer id) {
-        logger.info("Verifying if the product exists with an id = " + id);
+        logger.info("Verifying if the product exists with an id: " + id);
         Optional<Product> product = productRepository.findById(id);
         if (!product.isPresent()) {
             throw new ProductNotFoundException("Product with id " + id + " not found");

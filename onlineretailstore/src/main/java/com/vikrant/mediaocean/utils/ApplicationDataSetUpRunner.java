@@ -1,9 +1,9 @@
 package com.vikrant.mediaocean.utils;
 
 import com.vikrant.mediaocean.beans.BillBean;
+import com.vikrant.mediaocean.beans.ProductBean;
 import com.vikrant.mediaocean.beans.ProductDetailsForBilling;
 import com.vikrant.mediaocean.entity.Bills;
-import com.vikrant.mediaocean.entity.Product;
 import com.vikrant.mediaocean.service.BillService;
 import com.vikrant.mediaocean.service.ProductService;
 import org.slf4j.Logger;
@@ -40,16 +40,16 @@ public class ApplicationDataSetUpRunner implements CommandLineRunner {
     }
 
     private void setUpProductData() {
-        productService.addProduct(new Product(1, "Chips", A, 10.0));
-        productService.addProduct(new Product(2, "Biscuit", B, 20.0));
-        productService.addProduct(new Product(3, "Tea", C, 30.0));
-        productService.addProduct(new Product(4, "Jeans", A, 40.0));
-        productService.addProduct(new Product(5, "TV", B, 50.0));
-        productService.addProduct(new Product(6, "Lamp", C, 60.0));
-        productService.addProduct(new Product(7, "Table", A, 70.0));
-        productService.addProduct(new Product(8, "Apple", B, 80.0));
-        productService.addProduct(new Product(9, "Ketchup", C, 90.0));
-        productService.addProduct(new Product(10, "Bag", A, 100.0));
+        productService.addProduct(new ProductBean(1, "Chips", A, 10.0));
+        productService.addProduct(new ProductBean(2, "Biscuit", B, 20.0));
+        productService.addProduct(new ProductBean(3, "Tea", C, 30.0));
+        productService.addProduct(new ProductBean(4, "Jeans", A, 40.0));
+        productService.addProduct(new ProductBean(5, "TV", B, 50.0));
+        productService.addProduct(new ProductBean(6, "Lamp", C, 60.0));
+        productService.addProduct(new ProductBean(7, "Table", A, 70.0));
+        productService.addProduct(new ProductBean(8, "Apple", B, 80.0));
+        productService.addProduct(new ProductBean(9, "Ketchup", C, 90.0));
+        productService.addProduct(new ProductBean(10, "Bag", A, 100.0));
     }
 
     public void setupBillData() {

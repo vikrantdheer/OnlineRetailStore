@@ -21,7 +21,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.Optional;
 
 @RestController
 @Api(value = "onlineretailstore", description = "Products")
@@ -46,14 +45,14 @@ public class ProductController {
 
     @ApiOperation(value = "View product by id")
     @RequestMapping(value = "/products/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Optional<Product>> getProductByID(@PathVariable(value = "id") Integer id) {
+    public ResponseEntity<Product> getProductByID(@PathVariable(value = "id") Integer id) {
 
-        return new ResponseEntity<Optional<Product>>(productService.getProductByID(id), HttpStatus.OK);
+        return new ResponseEntity<Product>(productService.getProductByID(id), HttpStatus.OK);
     }
 
     @ApiOperation(value = "Add new product")
     @RequestMapping(value = "/products", method = RequestMethod.POST, produces = "application/json")
-    public ResponseEntity<Product> addProduct(@ApiParam(value = "JSON for the new product", required = true) @Valid @RequestBody Product productDetails) {
+    public ResponseEntity<Product> addProduct(@ApiParam(value = "JSON for the new product", required = true) @Valid @RequestBody ProductBean productDetails) {
 
         Product product = productService.addProduct(productDetails);
 
