@@ -32,10 +32,9 @@ We can add/update/modify products and bills using the below REST endpoints:
 * Build the executable jar:- mvn package
 * Go to target folder:- cd target
 * Run following command to start the server on port 8080:- java -jar "jar_name.jar"
-* We can configure port using commandline parameter:- --server.port=8081
-* We can access and invoke APIs using url:- http://localhost:8080/swagger-ui.html
+* Swagger url:- http://localhost:8080/swagger-ui.html
 
-The application is using H2 in-memory database and it persists test data on application restarts.
+Using H2 in-memory database and setting up the test data on application startup.
 
-**Update with spring security username and password both are "vikrant"
+**Update with spring security username and password both are "vikrant"**
 
