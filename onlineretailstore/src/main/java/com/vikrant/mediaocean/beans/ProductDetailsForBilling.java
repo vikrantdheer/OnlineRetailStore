@@ -52,9 +52,8 @@ public class ProductDetailsForBilling {
 
     @Override
     public String toString() {
-        return "ProductDetailsForBilling{" +
-                "productId='" + productId + '\'' +
-                ", quantity=" + quantity +
-                '}';
+        return "{productId='" + productId + '\'' +
+                ", quantity=" + quantity + "}";
+
     }
 }

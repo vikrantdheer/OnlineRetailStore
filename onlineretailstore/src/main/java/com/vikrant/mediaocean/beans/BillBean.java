@@ -1,8 +1,8 @@
 package com.vikrant.mediaocean.beans;
 
 import com.google.common.base.Objects;
-import com.sun.istack.internal.NotNull;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class BillBean {
@@ -41,8 +41,8 @@ public class BillBean {
 
     @Override
     public String toString() {
-        return "Bill{" +
-                ", products to be added:" + productsToBeAddedForBilling +
+        return "BillBean{" +
+                "products to be added: " + productsToBeAddedForBilling +
                 '}';
     }
 }

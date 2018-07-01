@@ -10,37 +10,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
-@Table(name = "BILL")
-public class Bill {
-
+@Table(name = "BILLS")
+public class Bills {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer billId;
 
-    @NotNull
     private int noOfItems;
 
-    @NotNull
     private double totalCost;
 
-    @NotNull
     private double totalTax;
 
-    @NotNull
     private double totalValue;
 
     @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    private List<Order> productOrder;
+    private List<Order> orders;
 
-    public Bill() {
+    public Bills() {
         super();
     }
 
-    public Bill(@NotNull Integer billId, @NotNull int noOfItems, @NotNull double totalValue) {
+    public Bills(Integer billId, int noOfItems, double totalValue) {
         this.billId = billId;
         this.noOfItems = noOfItems;
         this.totalValue = totalValue;
@@ -63,8 +57,8 @@ public class Bill {
             return this;
         }
 
-        public Bill havingTotalValueOf(double totalValue) {
-            return new Bill(this.billId, numberOfItems, totalValue);
+        public Bills havingTotalValueOf(double totalValue) {
+            return new Bills(this.billId, numberOfItems, totalValue);
         }
     }
 
@@ -108,19 +102,19 @@ public class Bill {
         this.totalValue = totalValue;
     }
 
-    public List<Order> getProductOrder() {
-        return productOrder;
+    public List<Order> getOrders() {
+        return orders;
     }
 
-    public void setProductOrder(List<Order> productOrder) {
-        this.productOrder = productOrder;
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Bill bill = (Bill) o;
+        Bills bill = (Bills) o;
         return noOfItems == bill.noOfItems &&
                 Double.compare(bill.totalCost, totalCost) == 0 &&
                 Double.compare(bill.totalTax, totalTax) == 0 &&

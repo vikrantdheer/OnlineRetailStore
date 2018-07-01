@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -25,21 +26,22 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public Optional<com.vikrant.mediaocean.entity.Product> getProductByID(Integer id) {
+    public Optional<Product> getProductByID(Integer id) {
         return productRepository.findById(id);
     }
 
-    public Iterable<com.vikrant.mediaocean.entity.Product> getAllProducts() {
+    public Iterable<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
+    @Transactional
     public Product addProduct(Product productDetails) {
-        logger.info("Data received to create product = " + productDetails);
+        logger.info("Data received to create product: " + productDetails);
 
         validateJson(productDetails);
         checkWhetherProductExists(productDetails.getProductId());
 
-        Product product = com.vikrant.mediaocean.entity.Product.withId(productDetails.getProductId())
+        Product product = Product.withId(productDetails.getProductId())
                 .havingName(productDetails.getProductName())
                 .ofCategory(productDetails.getProductCategory())
                 .costing(productDetails.getRate());
@@ -49,17 +51,19 @@ public class ProductService {
         return product;
     }
 
+    @Transactional
     public void deleteProductById(Integer productId) {
         verifyProductExistsBy(productId);
         productRepository.deleteById(productId);
     }
 
+    @Transactional
     public Product updateProductWith(ProductBean newDetails, Integer productId) {
-        com.vikrant.mediaocean.entity.Product product;
+        Product product;
 
         verifyProductExistsBy(productId);
 
-        Optional<com.vikrant.mediaocean.entity.Product> productFound = productRepository.findById(newDetails.getProductId());
+        Optional<Product> productFound = productRepository.findById(newDetails.getProductId());
         product = productFound.get().withId(newDetails.getProductId())
                 .havingName(newDetails.getProductName())
                 .ofCategory(newDetails.getProductCategory())
@@ -84,18 +88,19 @@ public class ProductService {
     }
 
     private void checkWhetherProductExists(Integer newProductId) {
-        Optional<com.vikrant.mediaocean.entity.Product> product = productRepository.findById(newProductId);
-        if (product.isPresent())
+        Optional<Product> product = productRepository.findById(newProductId);
+        if (product.isPresent()) {
             logger.info("Product with id: " + newProductId + " already exists");
-        throw new ProductAlreadyExistsException("Product with id: " + newProductId + " already exists");
+            throw new ProductAlreadyExistsException("Product with id: " + newProductId + " already exists");
+        }
     }
 
-    public Optional<com.vikrant.mediaocean.entity.Product> verifyProductExistsBy(Integer id) {
+    public Product verifyProductExistsBy(Integer id) {
         logger.info("Verifying if the product exists with an id = " + id);
-        Optional<com.vikrant.mediaocean.entity.Product> product = productRepository.findById(id);
+        Optional<Product> product = productRepository.findById(id);
         if (!product.isPresent()) {
             throw new ProductNotFoundException("Product with id " + id + " not found");
         }
-        return product;
+        return product.get();
     }
 }

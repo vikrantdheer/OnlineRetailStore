@@ -7,15 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import java.util.Optional;
 
 @Entity
-@Table(name = "ORDER")
+@Table(name = "ORDERS")
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer orderId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @OneToOne(fetch = FetchType.EAGER)
     private Product product;
@@ -26,18 +25,18 @@ public class Order {
         super();
     }
 
-    public Order(Optional<Product> productFound, int quantity) {
+    public Order(Product productFound, int quantity) {
         super();
-        this.product = productFound.get();
+        this.product = productFound;
         this.quantity = quantity;
     }
 
-    public Integer getOrderId() {
-        return orderId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Product getProduct() {
@@ -59,7 +58,7 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "orderId=" + orderId +
+                "id=" + id +
                 ", product=" + product +
                 ", quantity=" + quantity +
                 '}';

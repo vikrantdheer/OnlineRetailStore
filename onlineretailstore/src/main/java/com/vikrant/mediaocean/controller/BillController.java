@@ -1,7 +1,7 @@
 package com.vikrant.mediaocean.controller;
 
 import com.vikrant.mediaocean.beans.BillBean;
-import com.vikrant.mediaocean.entity.Bill;
+import com.vikrant.mediaocean.entity.Bills;
 import com.vikrant.mediaocean.entity.Product;
 import com.vikrant.mediaocean.service.BillService;
 import io.swagger.annotations.Api;
@@ -37,13 +37,13 @@ public class BillController {
 
     @ApiOperation(value = "Fetches a particular bill details")
     @RequestMapping(value = "/bills/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Optional<Bill>> getBillById(@PathVariable Integer id) {
-        return new ResponseEntity<Optional<Bill>>(billService.getBillById(id), HttpStatus.OK);
+    public ResponseEntity<Optional<Bills>> getBillById(@PathVariable Integer id) {
+        return new ResponseEntity<Optional<Bills>>(billService.getBillById(id), HttpStatus.OK);
     }
 
     @ApiOperation(value = "Fetches all bills from the database")
     @RequestMapping(value = "/bills", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Iterable<Bill>> getAllBills() {
+    public ResponseEntity<Iterable<Bills>> getAllBills() {
         return new ResponseEntity<>(billService.getAllBills(), HttpStatus.OK);
     }
 
@@ -56,9 +56,9 @@ public class BillController {
 
     @ApiOperation(value = "Creates an Bill and returns an id.")
     @RequestMapping(value = "/bills", produces = "application/json", method = RequestMethod.POST)
-    public ResponseEntity<Bill> createBill() {
+    public ResponseEntity<Bills> createBill() {
         logger.info("Request recieved to create Bill = ");
-        Bill bill = billService.createBill(new Bill(0, 0, 0.0));
+        Bills bill = billService.createBill(new Bills(0, 0, 0.0));
 
         logger.info("Created Bill with id = " + bill.getBillId());
         HttpHeaders responseHeaders = new HttpHeaders();
@@ -72,9 +72,9 @@ public class BillController {
 
     @ApiOperation(value = "Add or Remove products from the Bill")
     @RequestMapping(value = "/bills/{id}", produces = "application/json", method = RequestMethod.PUT)
-    public ResponseEntity<Optional<Bill>> updateBill(@RequestBody BillBean billDetails, @PathVariable Integer id) {
+    public ResponseEntity<Optional<Bills>> updateBill(@RequestBody BillBean billDetails, @PathVariable Integer id) {
         logger.info("Request received to update the bill with id: %s  ", id);
-        Optional<Bill> updatedBill = billService.updateBill(billDetails, id);
-        return new ResponseEntity<Optional<Bill>>(updatedBill, HttpStatus.OK);
+        Optional<Bills> updatedBill = billService.updateBill(billDetails, id);
+        return new ResponseEntity<Optional<Bills>>(updatedBill, HttpStatus.OK);
     }
 }

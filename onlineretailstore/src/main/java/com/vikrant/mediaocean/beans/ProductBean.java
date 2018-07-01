@@ -1,8 +1,10 @@
 package com.vikrant.mediaocean.beans;
 
 import com.google.common.base.Objects;
-import com.sun.istack.internal.NotNull;
 import com.vikrant.mediaocean.utils.ProductCategory;
+
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
 
 public class ProductBean {
     @NotNull
@@ -15,6 +17,7 @@ public class ProductBean {
     private ProductCategory productCategory;
 
     @NotNull
+    @DecimalMin(value = "0.1")
     private double rate;
 
     public ProductBean() {

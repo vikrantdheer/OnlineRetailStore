@@ -2,7 +2,7 @@ package com.vikrant.mediaocean.utils;
 
 import com.vikrant.mediaocean.beans.BillBean;
 import com.vikrant.mediaocean.beans.ProductDetailsForBilling;
-import com.vikrant.mediaocean.entity.Bill;
+import com.vikrant.mediaocean.entity.Bills;
 import com.vikrant.mediaocean.entity.Product;
 import com.vikrant.mediaocean.service.BillService;
 import com.vikrant.mediaocean.service.ProductService;
@@ -55,7 +55,7 @@ public class ApplicationDataSetUpRunner implements CommandLineRunner {
     public void setupBillData() {
 
         logger.info("Create bill...START");
-        Bill firstBill = billService.createBill(new Bill(0, 0, 0.0));
+        Bills firstBill = billService.createBill(new Bills(0, 0, 0.0));
         logger.info("Create bill...DONE");
 
         Integer billId = firstBill.getBillId();
@@ -74,9 +74,9 @@ public class ApplicationDataSetUpRunner implements CommandLineRunner {
         billService.updateBill(billdetails, billId);
         logger.info("Update bill...DONE");
 
-        Optional<Bill> retrieveUpdatedbill = billService.getBillById(firstBill.getBillId());
+        Optional<Bills> retrieveUpdatedbill = billService.getBillById(firstBill.getBillId());
 
-        logger.info("Retrieved updated bill = " + retrieveUpdatedbill.get().getNoOfItems() + "  value ="
+        logger.info("Retrieved updated bill with id: " + retrieveUpdatedbill.get().getNoOfItems() + " with value: "
                 + retrieveUpdatedbill.get().getTotalValue());
 
     }
